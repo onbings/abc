@@ -49,17 +49,17 @@
         "vcpkg_toolchain": "/opt/evs/sdk/aarch64.cmake",
         "vcpkg_overlay_port": "/home/bha/pro/github/onbings-vcpkg-registry",
         "cmake_toolchain": "/home/bha/pro/vcpkg/scripts/buildsystems/vcpkg.cmake",
-        "cmake_chainload_toolchain": "",
+        "cmake_chainload_toolchain": "/opt/evs/sdk/aarch64.cmake",
         "cmake_crosscompiling_emulator": "",
-        "vcpkg_triplet": "arm64-linux-static",
+        "vcpkg_triplet": "evs-arm64-linux-static",
         "build_as_shared_lib": "OFF",
-        "dbg_loc_binaries": "${userHome}/bld/abc-lin/binaries",
-        "dbg_loc_abc": "${userHome}/bld/abc-lin/app",
+        "dbg_loc_binaries": "${userHome}/bld/abc-lin",
+        "dbg_loc_abc": "${userHome}/bld/abc-lin/abc_exe",
         "dbg_loc_gdb": "/opt/evs/sdk/host/bin/aarch64-linux-gnu-gdb",
         "dbg_rem_binaries": "/tmp/vcprj/abc-lin",
-        "dbg_rem_abc": "/tmp/vcprj/abc-lin/bin/app",
+        "dbg_rem_abc": "/tmp/vcprj/abc-lin/abc_exe",
         "dbg_rem_user": "root",
         "dbg_rem_ip": "10.129.171.112",
-        "dbg_rem_port": "8080"
+        "dbg_rem_port": "2345"
     }
 }
