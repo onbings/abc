@@ -1,0 +1,35 @@
+{
+  "default-registry": {
+    "kind": "git",
+    "repository": "ssh://git@bitbucket.evs.tv:7999/vcpkg/vcpkg.git",
+    "baseline": "51a681e7b9a1bc83f643afc3eeebee52dfd3a36c"
+  },
+  "registries": [
+    {
+      "kind": "git",
+      "repository": "https://github.com/onbings/onbings-vcpkg-registry",
+      "baseline": "e2de96074d6cb103978b87afa22da09e43eadaa8",
+      "packages": [
+      ]
+    },
+    {
+      "kind": "git",
+      "repository": "ssh://git@bitbucket.evs.tv:7999/evs-xtserver/evs-xt-vcpkg-registry.git",
+      "baseline": "de5c0f3dc2839efb79fc0e1e54072a780f2c4e6f",
+      "packages": [
+        "evs-timepoint-cpp",
+        "evs-multicam-data",
+        "evs-profiler",
+        "easy-profiler"
+      ]
+    },
+    {
+      "kind": "git",
+      "repository": "ssh://git@bitbucket.evs.tv:7999/vcpkg/evs-vcpkg-registry.git",
+      "baseline": "ac525b8597d29318b12ca2e05756aa8b94434d12",
+      "packages": [
+        "evs-logging-cpp"
+      ]
+    }
+  ]
+}
