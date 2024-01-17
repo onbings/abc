@@ -3,7 +3,7 @@
         "cmake_bld_type": "Debug"
     },
     "Web": {
-        "cmake_src_root": "C:/pro/abc",
+        "cmake_src_root": "C:/pro/github/abc",
         "cmake_bld_root": "C:/bld/abc-web",
         "cmake_generator": "Ninja",
         "vcpkg_toolchain": "",
@@ -23,7 +23,7 @@
         "dbg_rem_port": "8080"
     },
     "Win": {
-        "cmake_src_root": "C:/pro/abc",
+        "cmake_src_root": "C:/pro/github/abc",
         "cmake_bld_root": "C:/bld/abc-win",
         "cmake_generator": "Visual Studio 17 2022",
         "vcpkg_toolchain": "",
