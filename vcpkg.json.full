@@ -1,0 +1,9 @@
+{
+  "name": "abc",
+  "version": "0.0.1",
+  "description": "The abc solution",
+  "dependencies": [
+    { "name": "argh" },
+    { "name": "bofstd" }
+  ]
+}

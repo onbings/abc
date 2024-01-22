@@ -9,31 +9,31 @@
 cmake_minimum_required(VERSION 3.25)
 project(abc VERSION 0.0.1.0)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug")
-##2 include(Dependencies.cmake)
+include(Dependencies.cmake)
 
-##1 add_library(abc_lib
-##1   ./lib/abc_lib.cpp
-##1   ./lib/abc_lib.h
-##1 )
+add_library(abc_lib
+./lib/abc_lib.cpp 
+./lib/abc_lib.h
+)
 
 add_executable(abc_exe
   abc.cpp
 )
 
-##1 target_link_libraries(abc_exe
-##1   abc_lib
-##2   argh
-##    ONBINGS::bofstd
-##1)
+target_link_libraries(abc_exe
+   abc_lib
+   argh
+   ONBINGS::bofstd
+)
 
-##4 if (EMSCRIPTEN)
-##4   message("===EMSCRIPTEN=== Add .html to .wasm and .js files")
-##4   set(CMAKE_EXECUTABLE_SUFFIX ".html")   #to generate .html in addition to .js and .wasm
-##4   set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -pthread -s NO_DISABLE_EXCEPTION_CATCHING")
-##4   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -s NO_DISABLE_EXCEPTION_CATCHING")
-##4   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s TOTAL_STACK=8MB -s TOTAL_MEMORY=256MB -s PTHREAD_POOL_SIZE=4 --embed-file ${CMAKE_CURRENT_SOURCE_DIR}/data@data")    
-##4   if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-##4     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
-##4     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
-##4   endif ()
-##4 endif()
+if (EMSCRIPTEN)
+  message("===EMSCRIPTEN=== Add .html to .wasm and .js files")
+  set(CMAKE_EXECUTABLE_SUFFIX ".html")   #to generate .html in addition to .js and .wasm
+  set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -pthread")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s TOTAL_STACK=8MB -s TOTAL_MEMORY=256MB -s PTHREAD_POOL_SIZE=4 --embed-file ${CMAKE_CURRENT_SOURCE_DIR}/data@data")    
+  if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+  endif ()
+endif()

@@ -1,8 +1,8 @@
 #cd C:\bld\abc-win
-#cmake -SC:\pro\abc -BC:\bld\abc
-##2 cmake -DCMAKE_TOOLCHAIN_FILE=C:\pro\vcpkg\scripts\buildsystems\vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static -DBUILD_SHARED_LIBS=OFF -SC:\pro\abc -BC:\bld\abc-win
+#cmake -SC:/pro/github/abc -BC:/bld/abc-win
+##2 cmake -DCMAKE_TOOLCHAIN_FILE=C:\pro\vcpkg\scripts\buildsystems\vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static -DBUILD_SHARED_LIBS=OFF -SC:\pro\github\abc -BC:\bld\abc-win
 #cd C:\bld\abc-web
-##4 cmake -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=C:/pro/emsdk/upstream/emscripten/cmake/Modules/Platform/emscripten.cmake -DCMAKE_TOOLCHAIN_FILE=C:/pro/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=wasm32-emscripten -DBUILD_SHARED_LIBS=OFF -DCMAKE_GENERATOR=Ninja -DCMAKE_BUILD_TYPE=Debug -SC:/pro/abc -BC:/bld/abc-web -DCMAKE_CROSSCOMPILING_EMULATOR=C:/pro/emsdk/node/16.20.0_64bit/bin/node.exe -G Ninja  
+##4 cmake -DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=C:/pro/emsdk/upstream/emscripten/cmake/Modules/Platform/emscripten.cmake -DCMAKE_TOOLCHAIN_FILE=C:/pro/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=wasm32-emscripten -DBUILD_SHARED_LIBS=OFF -DCMAKE_GENERATOR=Ninja -DCMAKE_BUILD_TYPE=Debug -SC:/pro/github/abc -BC:/bld/abc-web -DCMAKE_CROSSCOMPILING_EMULATOR=C:/pro/emsdk/node/16.20.0_64bit/bin/node.exe -G Ninja  
 #cmake --build .  --config Debug -j 16
 #emrun --browser chrome .
 
@@ -29,8 +29,8 @@ add_executable(abc_exe
 ##4 if (EMSCRIPTEN)
 ##4   message("===EMSCRIPTEN=== Add .html to .wasm and .js files")
 ##4   set(CMAKE_EXECUTABLE_SUFFIX ".html")   #to generate .html in addition to .js and .wasm
-##4   set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -pthread -s NO_DISABLE_EXCEPTION_CATCHING")
-##4   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -s NO_DISABLE_EXCEPTION_CATCHING")
+##4   set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -pthread")
+##4   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 ##4   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s TOTAL_STACK=8MB -s TOTAL_MEMORY=256MB -s PTHREAD_POOL_SIZE=4 --embed-file ${CMAKE_CURRENT_SOURCE_DIR}/data@data")    
 ##4   if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 ##4     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
